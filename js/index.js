@@ -7,11 +7,12 @@ sliderRef.addEventListener("input", _.debounce(() => {
 
 // 2
 const divRef = document.querySelector("#box");
- window.addEventListener("mousemove", _.debounce(moveBox, 1000, {
 
 
+ window.addEventListener("mousemove", _.debounce((event)=>{
+  const X = event.clientX;
+  const Y = event.clientY;
+  divRef.style.left = X  + "px";
+  divRef.style.top = Y + "px";
+}, 100 ))
 
-}))
-function moveBox() {
-
-}
